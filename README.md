@@ -15,3 +15,5 @@ To install these dependencies, run the following in your terminal (Be sure you h
 * `npm i path`
 * `npm i body-parser`
 * `npm i node-fetch`
+
+Be sure to paste your Client ID and Client Secret in oauth.js and your OAUTH link in index.html.
