@@ -1,0 +1,61 @@
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Discord OAUTH</title>
+
+    <style>
+        * {
+            text-align: center;
+            margin: 0px auto;
+        }
+        
+        #welcome_txt {
+            font-size: 24px;
+        }
+        
+        #login-link {
+            background-color: whitesmoke;
+            border-radius: 8px;
+            color: black;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+        }
+        
+        #login-link:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <a id='login-link' href='[DISCORD OAUTH LINK HERE]'>Login with Discord</a><br><br>
+    <p id='welcome_txt'></p>
+
+    <script>
+        window.onload = function() {
+            if (location.href.indexOf("code") !== -1) { // Detect if you logged in or not
+                const code = location.href.substring(location.href.indexOf("code") + 5, location.href.length); // Get the code OAUTH gives you
+                const req = new XMLHttpRequest(); // Create a new XMLHttpRequest
+                req.open("POST", "http://localhost:7100/user"); // Open the XMLHttpRequest
+                req.send(code); // Send the code in the request
+                req.onload = () => { // Will run when the request is loaded
+                    if (req.status === 500) { // Error
+                        document.getElementById('welcome_txt').innerText = `There was an error with that. Please try logging in again. Error Code: ${req.status}`;
+                    } else if (req.status === 200) { // Successful
+                        document.getElementById("welcome_txt").innerText = `Welcome, ${req.responseText}!`
+                    } else { // Other
+                        document.getElementById('welcome_txt').innerText = `An error occured. Please try logging in again. Error Code: ${req.status}`;
+                    }
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
