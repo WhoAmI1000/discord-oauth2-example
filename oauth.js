@@ -57,4 +57,4 @@ app.post('/user', (req, res) => { // Will run when there are any incoming POST r
 });
 app.listen(port, function() { // Configure the app to "listen" on the specified port.
     console.log(`App listening! Link: http://localhost:${port}/`); // Log the fact our app is ready to the console.
-})
+});
