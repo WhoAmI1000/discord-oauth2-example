@@ -1,4 +1,4 @@
-# Discord Oauth2 Example
+# Discord OAuth2 Example
 
 Dependencies:
   * express
