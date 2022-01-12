@@ -1,6 +1,6 @@
 # Discord OAuth2 Example
 
-Dependencies:
+## Dependencies used:
   * express
   * url
   * axios
