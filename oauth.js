@@ -1,6 +1,6 @@
 /* Import dependencies */
 const Express = require('express'); // Import express
-const { URLSearchParams } = require('url'); // import URLSearchParams from url. You can also use form-data (in that case, this line would be const FormData = require('form-data');).
+const { URLSearchParams } = require('url'); // import URLSearchParams from url. You can also use form-data (in that case, this line would be const FormData = require('form-data');). If you do, be sure to adjust your variable names.
 const axios = require('axios'); // Import Axios
 const path = require('path') // Import path
 const bodyParser = require('body-parser') // Import body-parser
