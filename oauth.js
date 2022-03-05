@@ -12,7 +12,7 @@ const client_secret = ''; // Paste your bot's secret here
 
 /* Define app variables */
 const app = Express(); // Create a web app
-const port = 7100; // Port to host on, can be anything. HTTP is by default 80. If you want to use https (so the URL would be https://localhost/), then the port would be 443.
+const port = 7100; // Port to host on, can be anything. HTTP is by default port 80. If you want to use https (so the URL would be https://localhost/), then the port would be 443.
 
 /* Make a function to give us configuration for the Discord API */
 function make_config(authorization_token) { // Define the function
