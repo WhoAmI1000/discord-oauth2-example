@@ -40,6 +40,7 @@
         window.onload = function() {
             if (location.href.indexOf("code") !== -1) { // Detect if you logged in or not
                 const code = location.href.substring(location.href.indexOf("code") + 5, location.href.length); // Get the code OAUTH gives you
+                /* Note: XMLHttpRequests are outdated and fetch is mainly used nowaways. Don't worry, XMLHttpRequests still work, but fetch may be a better option. */
                 const req = new XMLHttpRequest(); // Create a new XMLHttpRequest
                 req.open("POST", "http://localhost:7100/user"); // Open the XMLHttpRequest
                 req.send(code); // Send the code in the request
