@@ -2,9 +2,9 @@
 const Express = require('express'); // Import express
 const { URLSearchParams } = require('url'); // import URLSearchParams from url. You can also use form-data (in that case, this line would be const FormData = require('form-data');). If you do, be sure to adjust your variable names.
 const axios = require('axios'); // Import Axios
-const path = require('path') // Import path
-const bodyParser = require('body-parser') // Import body-parser
-const fetch = require('node-fetch') // Import node-fetch
+const path = require('path'); // Import path
+const bodyParser = require('body-parser'); // Import body-parser
+const fetch = require('node-fetch'); // Import node-fetch
 
 /* Client Variables */
 const client_id = ''; // Paste your bot's ID here
@@ -44,7 +44,7 @@ app.post('/user', (req, res) => { // Will run when there are any incoming POST r
     data_1.append('grant_type', 'authorization_code'); // This field will tell the Discord API what you are wanting in your initial request.
     data_1.append('redirect_uri', `http://localhost:${port}/`); // This is the redirect URL where the user will be redirected when they finish the Discord login
     data_1.append('scope', 'identify'); // This tells the Discord API what info you would like to retrieve. You can change this to include guilds, connections, email, etc.
-    data_1.append('code', req.body) // This is a key parameter in our upcoming request. It is the code the user got from logging in. This will help us retrieve a token which we can use to get the user's info.
+    data_1.append('code', req.body); // This is a key parameter in our upcoming request. It is the code the user got from logging in. This will help us retrieve a token which we can use to get the user's info.
 
     fetch('https://discord.com/api/oauth2/token', { method: "POST", body: data_1 }).then(response => response.json()).then(data => { // Make a request to the Discord API with the form data, convert the response to JSON, then take it and run the following code.
         axios.get("https://discord.com/api/users/@me", make_config(data.access_token)).then(response => { // Make a request yet again to the Discord API with the token from previously.
