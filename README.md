@@ -19,7 +19,7 @@ Be sure to paste your Client ID and Client Secret in oauth.js and your OAUTH lin
 To run the program, type `node oauth.js` in the console and then open the link given in the console. Be sure you have all dependencies installed!
 
 ## Code With Less Comments
-If you don't want your code filled with comments explaining what it does, you can get it from the non-annotated folder.
+If you don't want your code filled with comments explaining what it does, you can get it from the `non-annotated` folder.
 
 ### Tutorial located [here](https://circlertech.com/working-with-discord-oauth2).
 Good luck with your project!
