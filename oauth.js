@@ -4,7 +4,7 @@ const { URLSearchParams } = require('url'); // import URLSearchParams from url. 
 const axios = require('axios'); // Import Axios
 const path = require('path'); // Import path
 const bodyParser = require('body-parser'); // Import body-parser
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args)); // Import node-fetch asynchronously; see https://www.npmjs.com/package/node-fetch#installation for more info.
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args)); // Import node-fetch asynchronously; see https://www.npmjs.com/package/node-fetch#installation for more info on why this is done.
 
 /* Client Variables */
 const client_id = ''; // Paste your bot's ID here
