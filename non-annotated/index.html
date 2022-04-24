@@ -43,7 +43,7 @@
                 const code = location.href.substring(location.href.indexOf("code") + 5, location.href.length);
                 /* Note: XMLHttpRequests are outdated and fetch is mainly used nowaways. Don't worry, XMLHttpRequests still work, but fetch may be a better option. */
                 const req = new XMLHttpRequest();
-                req.open("POST", "http://localhost:7100/user");
+                req.open("POST", "http://localhost:80/user"); // Change the port to the port you defined as a variable in oauth.js
                 req.send(code);
                 req.onload = () => {
                     if (req.status === 500) {
