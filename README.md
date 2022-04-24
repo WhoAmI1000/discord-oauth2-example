@@ -16,7 +16,7 @@ To install these dependencies, run the following in your terminal (Be sure you h
 Be sure to paste your Client ID and Client Secret in oauth.js and your OAUTH link in index.html.
 
 ## Changing the Port
-If you don't want to run it on port 7100 and instead would prefer or something else (such as 80 or 443), change the port variable in `oauth.js` and change the redirect URI in your Discord developer portal.
+If you don't want to run it on port 80 and instead would prefer or something else (such as 443), change the port variable in `oauth.js`, the POST request URL in `index.html`, and the redirect URI in your Discord developer portal.
 
 ## Running the Program
 To run the program, type `node oauth.js` in the console and then open the link given in the console. Be sure you have all dependencies installed!
