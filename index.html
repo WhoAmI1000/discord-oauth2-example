@@ -9,11 +9,11 @@
             text-align: center;
             margin: 0px auto;
         }
-        
+
         #welcome_txt {
             font-size: 24px;
         }
-        
+
         #login-link {
             background-color: whitesmoke;
             border-radius: 8px;
@@ -24,7 +24,7 @@
             display: inline-block;
             font-size: 20px;
         }
-        
+
         #login-link:hover {
             cursor: pointer;
         }
@@ -33,16 +33,15 @@
 
 <body>
     <br>
-    <a id='login-link' href='[DISCORD OAUTH LINK HERE]'>Login with Discord</a><br><br> <!-- Be sure to paste your discord oauth2 link from the dev portal! -->
+    <a id='login-link' href='[DISCORD OAUTH LINK HERE]'>Login with Discord</a><br><br>
     <p id='welcome_txt'></p>
 
     <script>
-        window.onload = function() {
+        window.onload = function () {
             if (location.href.indexOf("code") !== -1) { // Detect if you logged in or not
                 const code = location.href.substring(location.href.indexOf("code") + 5, location.href.length); // Get the code OAUTH gives you
-                /* Note: XMLHttpRequests are outdated and fetch is mainly used nowaways. Don't worry, XMLHttpRequests still work, but fetch may be a better option. */
                 const req = new XMLHttpRequest(); // Create a new XMLHttpRequest
-                req.open("POST", "http://localhost:7100/user"); // Open the XMLHttpRequest
+                req.open("POST", "http://localhost:80/user"); // Open the XMLHttpRequest; CHANGE THE PORT TO THE PORT YOU HAVE AS YOUR VARIABLE IN OAUTH.js.
                 req.send(code); // Send the code in the request
                 req.onload = () => { // Will run when the request is loaded
                     if (req.status === 500) { // Error
