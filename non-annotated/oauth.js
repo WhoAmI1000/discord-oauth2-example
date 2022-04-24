@@ -42,7 +42,7 @@ app.post('/user', (req, res) => {
     data_1.append('client_id', client_id);
     data_1.append('client_secret', client_secret);
     data_1.append('grant_type', 'authorization_code');
-    data_1.append('redirect_uri', `http://localhost:${port}/`);
+    data_1.append('redirect_uri', `http://localhost:${port}`);
     data_1.append('scope', 'identify');
     data_1.append('code', req.body);
 
